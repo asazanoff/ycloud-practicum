@@ -1,0 +1,12 @@
+# Simple service for k8s to init load balancer
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-loadbalancer
+spec:
+  selector:
+    app: nginx
+  ports:
+    - port: 80
+      targetPort: 80
+  type: LoadBalancer

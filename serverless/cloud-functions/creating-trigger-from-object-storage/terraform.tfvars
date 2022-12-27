@@ -1,0 +1,5 @@
+cloudID    = "###Cloud-ID###"
+folderID   = "###Folder-ID###"
+token      = "###Token###"
+access_key = "###Bucket-access-key###"
+secret_key = "###Bucket-secret-key###"

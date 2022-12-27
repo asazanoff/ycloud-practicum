@@ -1,0 +1,19 @@
+# Simple k8s specification to deploy 2 docker containers with custom web-servers
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-nginx-development
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginx
+          image: "###IMAGE-ID###"

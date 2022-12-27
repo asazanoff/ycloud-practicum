@@ -1,0 +1,24 @@
+global:
+  scrape_interval: "15s"
+  scrape_timeout: "10s"
+  evaluation_interval: "15s"
+
+scrape_configs:
+  - job_name: "prometheus"
+    static_configs:
+      - targets:
+          - "localhost:9090"
+
+  - job_name: "yc-monitoring-export"
+    metrics_path: "/monitoring/v2/prometheusMetrics"
+    params:
+      folderID:
+        - "b1gl68u479gjaltnj7dk"
+      service:
+        - "storage"
+    bearer_token: "#####"
+    static_configs:
+      - targets: ["monitoring.api.cloud.yandex.net"]
+        labels:
+          folderID: "#####FOLDER_ID#####"
+          service: "storage"
